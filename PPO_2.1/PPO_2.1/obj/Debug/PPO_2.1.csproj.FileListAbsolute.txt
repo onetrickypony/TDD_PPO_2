@@ -1,0 +1,6 @@
+D:\6_sem\PPO\PPO_2.1\PPO_2.1\bin\Debug\PPO_2.1.exe.config
+D:\6_sem\PPO\PPO_2.1\PPO_2.1\bin\Debug\PPO_2.1.exe
+D:\6_sem\PPO\PPO_2.1\PPO_2.1\bin\Debug\PPO_2.1.pdb
+D:\6_sem\PPO\PPO_2.1\PPO_2.1\obj\Debug\PPO_2.1.csprojResolveAssemblyReference.cache
+D:\6_sem\PPO\PPO_2.1\PPO_2.1\obj\Debug\PPO_2.1.exe
+D:\6_sem\PPO\PPO_2.1\PPO_2.1\obj\Debug\PPO_2.1.pdb
