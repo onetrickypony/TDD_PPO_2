@@ -8,17 +8,18 @@ namespace PPO_2
 {
     public class MyQueue
     {
-        Stack<Params> head;
-        Stack<Params> tail;
+        MyStack head;
+        MyStack tail;
 
         public MyQueue()
         {
-            head = new Stack<Params>();
-            tail = new Stack<Params>();
+            head = new MyStack();
+            tail = new MyStack();
         } 
 
         public void enqueue(int value)
         {
+            //head.Push(new Params();
             throw new NotImplementedException();
         }
 

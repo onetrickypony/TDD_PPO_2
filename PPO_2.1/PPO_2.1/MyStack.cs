@@ -6,43 +6,40 @@ using System.Threading.Tasks;
 
 namespace PPO_2
 {
-    public class MyStack // не нужен?
+    public class MyStack 
     {
-        private Stack<int> stack;
-
-        public Stack<int> Stack
-        {
-            get{ return stack; }
-        }
+        private Stack<Params> stack;
 
         public MyStack()
         {
-            stack = new Stack<int>();
+            stack = new Stack<Params>();
         }
 
-        public Params Top()
+        public bool Peek(out Params peek)
+        {
+         
+               
+            throw new NotImplementedException();
+        }
+
+        public void Push(int element)
         {
             throw new NotImplementedException();
         }
 
-        public void Push(int elelment)
+        public bool Pop()
         {
             throw new NotImplementedException();
         }
 
-        public int Pop()
+        private bool IsEmpty()
         {
             throw new NotImplementedException();
         }
 
-        public bool CopyFromStack(MyStack stack2)
+        public List<Params> GetStack
         {
-            throw new NotImplementedException();
-        }
-
-        public bool IsEmpty()
-        {
-            throw new NotImplementedException();
+            get { throw new NotImplementedException(); /*return new List<Params>(stack);*/ }
         }
 
     }

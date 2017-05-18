@@ -35,6 +35,11 @@ namespace PPO_2
             this.minvalue = minvalue;
         }
 
-
+        public Params()
+        {
+            this.value = 0;
+            this.maxvalue = 0;
+            this.minvalue = 0;
+        }
     }
 }
