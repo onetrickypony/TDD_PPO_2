@@ -85,10 +85,11 @@ namespace NUnit.Tests
             public void TestPop1()
             {
                 MyStack stack = new MyStack();
+                Params value = new Params(); ;
 
                 stack.Push(1);
-                stack.Pop();
-                stack.Pop();
+                stack.Pop(out value);
+                stack.Pop(out value);
 
                 List<Params> received_values = stack.GetStack;
 
@@ -101,6 +102,7 @@ namespace NUnit.Tests
                 MyStack stack = new MyStack();
                 List<Params> tstvalues = new List<Params>();
                 bool bool_value = true;
+                Params value = new Params();
 
                 tstvalues.Add(new Params(1, 1, 1));
                 tstvalues.Add(new Params(2, 2, 1));
@@ -112,7 +114,7 @@ namespace NUnit.Tests
                 stack.Push(3);
                 stack.Push(4);
                 stack.Push(5);
-                stack.Pop();
+                stack.Pop(out value);
 
                 List<Params> received_values = stack.GetStack;
 
@@ -123,7 +125,7 @@ namespace NUnit.Tests
                     if (received_values[i] != tstvalues[i])
                         bool_value = false;
 
-                Assert.IsTrue(bool_value);
+                Assert.IsTrue(bool_value && value == new Params(5, 5, 1));
             }
 
             [Test]
@@ -132,6 +134,7 @@ namespace NUnit.Tests
                 MyStack stack = new MyStack();
                 List<Params> tstvalues = new List<Params>();
                 bool bool_value = true;
+                Params value = new Params();
 
                 tstvalues.Add(new Params(1, 1, 1));
                 tstvalues.Add(new Params(4, 4, 1));
@@ -140,8 +143,8 @@ namespace NUnit.Tests
                 stack.Push(1);
                 stack.Push(2);
                 stack.Push(3);
-                stack.Pop();
-                stack.Pop();
+                stack.Pop(out value);
+                stack.Pop(out value);
                 stack.Push(4);
                 stack.Push(5);
 
@@ -154,15 +157,16 @@ namespace NUnit.Tests
                     if (received_values[i] != tstvalues[i])
                         bool_value = false;
 
-                Assert.IsTrue(bool_value);
+                Assert.IsTrue(bool_value && value == new Params(2, 2, 1));
             }
 
             [Test]
             public void Test_Pop_Empty()
             {
                 MyStack stack = new MyStack();
+                Params value = new Params();
 
-                Assert.False(stack.Pop());
+                Assert.False(stack.Pop(out value));
             }
 
             [Test]
@@ -206,12 +210,12 @@ namespace NUnit.Tests
                 MyStack stack = new MyStack();
                 Params tstvalue = new Params(2, 2, 1);
                 Params received_value = new Params();
-
+                Params value = new Params();
 
                 stack.Push(2);
                 stack.Push(1);
                 stack.Push(3);
-                stack.Pop();
+                stack.Pop(out value);
 
                 bool bool_value = stack.Peek(out received_value);
 
@@ -222,10 +226,11 @@ namespace NUnit.Tests
             public void Test_Peek3()
             {
                 MyStack stack = new MyStack();
-                Params received_value;
+                Params received_value = new Params();
+                Params value = new Params();
 
                 stack.Push(2);
-                stack.Pop();      
+                stack.Pop(out value);      
 
                 Assert.IsFalse(stack.Peek(out received_value));
             }

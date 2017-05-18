@@ -17,29 +17,68 @@ namespace PPO_2
 
         public bool Peek(out Params peek)
         {
-         
-               
-            throw new NotImplementedException();
+            bool result;
+
+            if (this.IsEmpty())
+            {
+                peek = new Params();
+                result = false;
+            }
+            else
+            {
+                peek = stack.Peek();
+                result = true;
+            }
+            return result;
         }
 
         public void Push(int element)
         {
-            throw new NotImplementedException();
+            if (this.IsEmpty())
+                stack.Push(new Params(element, element, element));
+            else
+            {
+                int min = Math.Min(element, stack.Peek().MinValue);
+                int max = Math.Max(element, stack.Peek().MaxValue);
+                stack.Push(new Params(element, max, min));
+            }
         }
 
-        public bool Pop()
+        public bool Pop(out Params element)
         {
-            throw new NotImplementedException();
+            bool result;
+            if (stack.Count == 0)
+            {
+                element = new Params();
+                result = false;
+            }
+            else
+            {
+                element = stack.Pop();
+                result = true;
+            }
+            return result;
         }
 
-        private bool IsEmpty()
+        public bool IsEmpty()
         {
-            throw new NotImplementedException();
+            return stack.Count == 0;
+        }
+
+        public void CopyFromAnotherStack(MyStack other_stack)
+        {
+            stack.Clear();
+            while (!other_stack.IsEmpty())
+            {
+                Params temp = new Params();
+                if (other_stack.Pop(out temp))
+                    this.Push(temp.Value);
+            }
         }
 
         public List<Params> GetStack
         {
-            get { throw new NotImplementedException(); /*return new List<Params>(stack);*/ }
+            get { return new List<Params>(stack); }
         }
 
     }

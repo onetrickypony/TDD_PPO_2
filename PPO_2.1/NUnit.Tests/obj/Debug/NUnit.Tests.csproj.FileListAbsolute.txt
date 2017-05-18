@@ -16,3 +16,12 @@ D:\OneDrive\Github_REP\TDD_PPO_2\PPO_2.1\NUnit.Tests\bin\Debug\nunit.framework.x
 D:\OneDrive\Github_REP\TDD_PPO_2\PPO_2.1\NUnit.Tests\obj\Debug\NUnit.Tests.csprojResolveAssemblyReference.cache
 D:\OneDrive\Github_REP\TDD_PPO_2\PPO_2.1\NUnit.Tests\obj\Debug\NUnit.Tests.dll
 D:\OneDrive\Github_REP\TDD_PPO_2\PPO_2.1\NUnit.Tests\obj\Debug\NUnit.Tests.pdb
+D:\6_sem\PPO\PPO_2.2\NUnit.Tests\bin\Debug\NUnit.Tests.dll
+D:\6_sem\PPO\PPO_2.2\NUnit.Tests\bin\Debug\NUnit.Tests.pdb
+D:\6_sem\PPO\PPO_2.2\NUnit.Tests\bin\Debug\nunit.framework.dll
+D:\6_sem\PPO\PPO_2.2\NUnit.Tests\bin\Debug\PPO_2.1.exe
+D:\6_sem\PPO\PPO_2.2\NUnit.Tests\bin\Debug\PPO_2.1.pdb
+D:\6_sem\PPO\PPO_2.2\NUnit.Tests\bin\Debug\nunit.framework.xml
+D:\6_sem\PPO\PPO_2.2\NUnit.Tests\obj\Debug\NUnit.Tests.csprojResolveAssemblyReference.cache
+D:\6_sem\PPO\PPO_2.2\NUnit.Tests\obj\Debug\NUnit.Tests.dll
+D:\6_sem\PPO\PPO_2.2\NUnit.Tests\obj\Debug\NUnit.Tests.pdb
