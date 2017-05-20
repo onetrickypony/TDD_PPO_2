@@ -42,8 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IOutput.cs" />
+    <Compile Include="IQueue.cs" />
     <Compile Include="MyQueue.cs" />
     <Compile Include="MyStack.cs" />
+    <Compile Include="Output.cs" />
     <Compile Include="Params.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

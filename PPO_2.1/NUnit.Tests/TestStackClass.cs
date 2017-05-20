@@ -52,13 +52,13 @@ namespace NUnit.Tests
                 bool bool_value = true;
 
                 tstvalues.Add(new Params(0, 0, 0));
-                tstvalues.Add(new Params(5, 0, 5));
-                tstvalues.Add(new Params(-1, -1, 5));
-                tstvalues.Add(new Params(2, -1, 5));
-                tstvalues.Add(new Params(6, -1, 6));
-                tstvalues.Add(new Params(1, -1, 6));
-                tstvalues.Add(new Params(6, -1, 6));
-                tstvalues.Add(new Params(-5, -5, 6));
+                tstvalues.Add(new Params(5, 5, 0));
+                tstvalues.Add(new Params(-1, 5, -1));
+                tstvalues.Add(new Params(2, 5, -1));
+                tstvalues.Add(new Params(6, 6, -1));
+                tstvalues.Add(new Params(1, 6, -1));
+                tstvalues.Add(new Params(6, 6, -1));
+                tstvalues.Add(new Params(-5, 6, -5));
 
                 stack.Push(0);
                 stack.Push(5);
@@ -208,7 +208,7 @@ namespace NUnit.Tests
             public void Test_Peek2()
             {
                 MyStack stack = new MyStack();
-                Params tstvalue = new Params(2, 2, 1);
+                Params tstvalue = new Params(1, 2, 1);
                 Params received_value = new Params();
                 Params value = new Params();
 

@@ -78,8 +78,8 @@ namespace NUnit.Tests1
             List<int> tstvalues = new List<int>();
             bool bool_value = true;
 
-            tstvalues.Add(-10);
-            tstvalues.Add(20);
+            tstvalues.Add(-30);
+            tstvalues.Add(40);
             tstvalues.Add(-50);
             tstvalues.Add(60);
 
@@ -87,9 +87,10 @@ namespace NUnit.Tests1
             queue.enqueue(20);
             queue.enqueue(-30);
             queue.enqueue(40);
-            bool_value = queue.dequeue() && queue.dequeue();
             queue.enqueue(-50);
             queue.enqueue(60);
+
+            bool_value = queue.dequeue() && queue.dequeue();
 
             List<int> received_values = queue.GetList;
 
@@ -107,28 +108,16 @@ namespace NUnit.Tests1
         public void TestDequeue2()
         {
             MyQueue queue = new MyQueue();
-            List<int> tstvalues = new List<int>();
             bool bool_value = true;
-
-            tstvalues.Add(-10);
-            tstvalues.Add(20);
 
             queue.enqueue(-10);
             queue.enqueue(20);
-            queue.enqueue(-30);
-            queue.enqueue(40);
+
             bool_value = queue.dequeue() && queue.dequeue();
 
             List<int> received_values = queue.GetList;
 
-            if (received_values.Count != tstvalues.Count)
-                bool_value = false;
-
-            for (int i = 0; (bool_value == true) && (i < received_values.Count); i++)
-                if (received_values[i] != tstvalues[i])
-                    bool_value = false;
-
-            Assert.IsTrue(bool_value);
+            Assert.IsTrue(bool_value && received_values.Count == 0);
         }
 
 
@@ -220,12 +209,12 @@ namespace NUnit.Tests1
             bool bool_value = true;
             int max = 0;
 
+            queue.enqueue(13);
             queue.enqueue(3);
             queue.enqueue(-21);
             queue.enqueue(9);
-            queue.enqueue(13);
-            queue.dequeue();
             queue.enqueue(-2);
+            queue.dequeue();
 
             bool_value = queue.maximum(out max);
 
@@ -233,7 +222,7 @@ namespace NUnit.Tests1
         }
 
         [Test]
-        public void Min1()
+        public void Test_Min1()
         {
             MyQueue queue = new MyQueue();
             bool bool_value = true;
@@ -251,7 +240,7 @@ namespace NUnit.Tests1
         }
 
         [Test]
-        public void Min2()
+        public void Test_Min2()
         {
             MyQueue queue = new MyQueue();
             bool bool_value = true;
@@ -269,7 +258,7 @@ namespace NUnit.Tests1
         }
 
         [Test]
-        public void Min3()
+        public void Test_Min3()
         {
             MyQueue queue = new MyQueue();
             bool bool_value = true;
@@ -287,18 +276,19 @@ namespace NUnit.Tests1
         }
 
         [Test]
-        public void Min4()
+        public void Test_Min4()
         {
             MyQueue queue = new MyQueue();
             bool bool_value = true;
             int min = 0;
 
+            queue.enqueue(-21);
             queue.enqueue(3);
             queue.enqueue(13);
             queue.enqueue(9);
-            queue.enqueue(-21);
-            queue.dequeue();
             queue.enqueue(-2);
+
+            queue.dequeue();
 
             bool_value = queue.minimum(out min);
 

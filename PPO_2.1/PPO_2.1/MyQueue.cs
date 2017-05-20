@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PPO_2._1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PPO_2
 {
-    public class MyQueue
+    public class MyQueue : IQueue
     {
         MyStack head;
         MyStack tail;
@@ -62,7 +63,7 @@ namespace PPO_2
                 if (is_head)
                     min = temp_head.MinValue;
                 else
-                    min = temp_tail.MaxValue;
+                    min = temp_tail.MinValue;
             }
             else
             {
@@ -123,6 +124,11 @@ namespace PPO_2
 
                 return result;               
             }
+        }
+
+        public int Count
+        {
+            get { return head.GetStack.Count + tail.GetStack.Count; }
         }
 
     }

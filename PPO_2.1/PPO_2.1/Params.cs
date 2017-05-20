@@ -41,5 +41,21 @@ namespace PPO_2
             this.maxvalue = 0;
             this.minvalue = 0;
         }
+
+        public static bool operator ==(Params left, Params right)
+        {
+            if (left.MaxValue == right.MaxValue && left.MinValue == right.MinValue && left.Value == right.Value)
+                return true;
+            else
+                return false;
+        }
+
+        public static bool operator !=(Params left, Params right)
+        {
+            if (left.MaxValue == right.MaxValue && left.MinValue == right.MinValue && left.Value == right.Value)
+                return false;
+            else
+                return true;
+        }
     }
 }

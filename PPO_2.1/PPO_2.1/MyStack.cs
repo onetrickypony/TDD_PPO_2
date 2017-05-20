@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PPO_2
 {
-    public class MyStack 
+    public class MyStack
     {
         private Stack<Params> stack;
 
@@ -78,7 +78,7 @@ namespace PPO_2
 
         public List<Params> GetStack
         {
-            get { return new List<Params>(stack); }
+            get { return new List<Params>(stack.Reverse()); }
         }
 
     }
