@@ -34,7 +34,7 @@ namespace NUnit.Tests1
             queue.enqueue(6);
             queue.enqueue(7);
 
-            List<int> received_values = queue.GetList;
+            List<int> received_values = queue.GetList();
 
             if (received_values.Count != tstvalues.Count)
                 bool_value = false;
@@ -92,7 +92,7 @@ namespace NUnit.Tests1
 
             bool_value = queue.dequeue() && queue.dequeue();
 
-            List<int> received_values = queue.GetList;
+            List<int> received_values = queue.GetList();
 
             if (received_values.Count != tstvalues.Count)
                 bool_value = false;
@@ -115,7 +115,7 @@ namespace NUnit.Tests1
 
             bool_value = queue.dequeue() && queue.dequeue();
 
-            List<int> received_values = queue.GetList;
+            List<int> received_values = queue.GetList();
 
             Assert.IsTrue(bool_value && received_values.Count == 0);
         }
@@ -131,7 +131,7 @@ namespace NUnit.Tests1
             queue.enqueue(1);
             bool_value = queue.dequeue() && queue.dequeue();
 
-            List<int> received_values = queue.GetList;
+            List<int> received_values = queue.GetList();
 
             if (received_values.Count != tstvalues.Count)
                 bool_value = false;
@@ -143,7 +143,7 @@ namespace NUnit.Tests1
         public void Test_GetList_Empty()
         {
             MyQueue queue = new MyQueue();
-            List<int> received_values = queue.GetList;
+            List<int> received_values = queue.GetList();
 
             Assert.IsTrue(received_values.Count == 0);
         }

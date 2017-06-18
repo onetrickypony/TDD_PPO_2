@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace PPO_2._1
@@ -10,26 +11,30 @@ namespace PPO_2._1
     {
         static void Main(string[] args)
         {
-
             IQueue queue = new MyQueue();
             IOutput output = new Output();
+            Generator generator = new Generator(100);
+            GeneratorManager generatorManager = new GeneratorManager(10);
 
-            int limit = 8;
-            int min, max;
-            Random generator = new Random();
+            generator.pushEvent += generatorManager.Push;
+            generatorManager.eventPrintList += output.PrintQueue;
+            generatorManager.eventDequeue += queue.dequeue;
+            generatorManager.eventEnqueue += queue.enqueue;
+            generatorManager.eventGetMaximum += queue.maximum;
+            generatorManager.eventGetMinimum += queue.minimum;
+            generatorManager.eventGetList += queue.GetList;
+            generatorManager.eventGetCount += queue.Count;
 
-            do
-            {
-                queue.enqueue(generator.Next(100));
+            Thread controlThread = new Thread(generatorManager.Run);
+            Thread generatorThread = new Thread(generator.Run);
 
-                if (queue.Count > limit)
-                    queue.dequeue();
+            controlThread.Start();
+            generatorThread.Start();
 
-                queue.minimum(out min);
-                queue.maximum(out max);
-                output.PrintQueue(queue.GetList, min, max);
+            while (Console.ReadKey().Key != ConsoleKey.Escape);
 
-            } while (Console.ReadKey().Key != ConsoleKey.Q);
+            generator.Stop();
+            generatorManager.Stop();
         }
     }
 }

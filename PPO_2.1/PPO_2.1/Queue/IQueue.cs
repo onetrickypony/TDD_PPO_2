@@ -12,7 +12,7 @@ namespace PPO_2._1
         bool dequeue();
         bool minimum(out int min);
         bool maximum(out int max);
-        List<int> GetList { get; }
-        int Count { get; }
+        List<int> GetList();
+        int Count();
     }
 }

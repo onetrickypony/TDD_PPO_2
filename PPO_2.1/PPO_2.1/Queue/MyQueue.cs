@@ -108,27 +108,25 @@ namespace PPO_2
             return tail.IsEmpty() && head.IsEmpty();
         }
 
-        public List<int> GetList
-        {
-            get
-            {                
-                List<int> result = new List<int>();
-                List<Params> copy_of_head = new List<Params>(head.GetStack);
-                List<Params> copy_of_tail = new List<Params>(tail.GetStack);
+        public List<int> GetList()
+        {               
+            List<int> result = new List<int>();
+            List<Params> copy_of_head = new List<Params>(head.GetStack);
+            List<Params> copy_of_tail = new List<Params>(tail.GetStack);
 
-                copy_of_tail.Reverse();
-                copy_of_tail.AddRange(copy_of_head);
+            copy_of_tail.Reverse();
+            copy_of_tail.AddRange(copy_of_head);
 
-                for (int i = 0; i < copy_of_tail.Count; i++)
-                    result.Add(copy_of_tail[i].Value);
+            for (int i = 0; i < copy_of_tail.Count; i++)
+                result.Add(copy_of_tail[i].Value);
 
-                return result;               
-            }
+            return result;               
+            
         }
 
-        public int Count
+        public int Count()
         {
-            get { return head.GetStack.Count + tail.GetStack.Count; }
+            return head.GetStack.Count + tail.GetStack.Count;
         }
 
     }

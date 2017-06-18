@@ -42,12 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IOutput.cs" />
-    <Compile Include="IQueue.cs" />
-    <Compile Include="MyQueue.cs" />
-    <Compile Include="MyStack.cs" />
-    <Compile Include="Output.cs" />
-    <Compile Include="Params.cs" />
+    <Compile Include="Generator.cs" />
+    <Compile Include="GeneratorManager.cs" />
+    <Compile Include="Output\IOutput.cs" />
+    <Compile Include="Queue\IQueue.cs" />
+    <Compile Include="Queue\MyQueue.cs" />
+    <Compile Include="Queue\MyStack.cs" />
+    <Compile Include="Output\Output.cs" />
+    <Compile Include="Queue\Params.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
